@@ -1,3 +1,5 @@
+## Next update will be on mc version 26.1
+
 **SayAs** is a lightweight Fabric mod that adds a simple command allowing players (with permission) to send chat messages **as another player**.
 Perfect for administrators, moderation tools, role-play servers, and custom events.
 
