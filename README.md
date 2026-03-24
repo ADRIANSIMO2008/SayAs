@@ -1,42 +1,94 @@
-## Next update will be on mc version 26.1
+## 🗣️ SayAs
 
-**SayAs** is a lightweight Fabric mod that adds a simple command allowing players (with permission) to send chat messages **as another player**.
+**SayAs** is a lightweight Fabric mod that allows players (with permission) to send chat messages as another player, use custom aliases, or fully mimic other players in real-time.
 Perfect for administrators, moderation tools, role-play servers, and custom events.
 
 ---
 
 ## ✨ Features
 
-* Adds the command:
+Adds multiple commands:
 
-  ```
-  /sayas <player> <message>
-  ```
-* Sends a chat message exactly as if it was written by the selected player
-* Fully compatible with **LuckPerms**
-* Permission node:
+### Basic usage
 
-  ```
-  adriansimo.sayas
-  ```
-* Automatic logging of all /sayas actions
-  → Logs stored in: `sayas/log/sayas.log`
-* Simple, lightweight, no performance impact
+```
+/sayas as <player> <message>
+```
+
+Sends a message as if written by the selected player
+
+### Alias system
+
+```
+/sayas name <name>
+/sayas name show
+/sayas name clear
+```
+
+Set, view, or clear your custom display name (stored per-player)
+
+### Mimic mode
+
+```
+/sayas mimic <on|off|status>
+```
+
+When enabled, your normal chat messages are sent as your configured name
+Attempts real player mimic if the target is online
+
+### JSON messages
+
+```
+/sayas json <player> <json>
+```
+
+Send advanced chat messages using raw JSON (tellraw format)
 
 ---
 
-## 📂 Log Format
+## 🔐 Permissions
+
+* `sayas.use` – Basic usage
+* `sayas.mimic` – Enable mimic mode
+* `sayas.json` – Use JSON messages
+
+✔ Fully compatible with **LuckPerms** (Should be, luckperms for 26.1 isnt out yet)
+✔ Falls back to OP system if LuckPerms is not installed
+
+---
+
+## 📂 Logging
+
+All actions are automatically logged:
 
 ```
-[2025-11-21T13:10:59.505297300] ADRIANSIMO2008 -> ADMIN: Test
+sayas/log/sayas.log
 ```
+
+### Example:
+
+```
+[2025-11-21T13:10:59.505297300] PlayerA -> PlayerB: Hello
+JSON [2025-11-21T13:11:10] PlayerA -> PlayerB: {"text":"Hi"}
+```
+
+---
+
+## ⚙️ Features Overview
+
+* Persistent alias system (UUID-based)
+* Real-time chat interception (mimic mode)
+* Fallback system if mimic fails
+* JSON chat support for advanced formatting
+* Lightweight and thread-safe implementation
+* No noticeable performance impact
 
 ---
 
 ## 🧩 Requirements
 
 * Fabric Loader 0.18.1+
-* Fabric API 
+* Fabric API
 * Minecraft 1.21.10+
 
 ---
@@ -45,5 +97,5 @@ Perfect for administrators, moderation tools, role-play servers, and custom even
 
 * Server administration
 * Role-play events
-* Automated moderation tools
-* Testing chat interactions
+* Moderation tools
+* Chat testing and scripting
