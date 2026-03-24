@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "com.adriansimo.sayas.mixin.client",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"ExampleClientMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

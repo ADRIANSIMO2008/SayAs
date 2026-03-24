@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "sayas",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"name": "SayAs Command Mod",
 	"description": "Adds the /sayas <player> <message> command, allowing users to send chat messages as another player. Fully compatible with LuckPerms.",
 	"authors": [
@@ -11,28 +11,32 @@
 		"homepage": "https://modrinth.com/project/sayas"
 	},
 	"license": "MIT",
-	"icon": "assets/sayas/icon.png",
+	"icon": "assets/sayas-mod/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"com.adriansimo.sayas.SayAsMod"
 		],
 		"client": [
-			"com.adriansimo.sayas.SayAsClient"
+			"com.adriansimo.sayas.SayAsModClient"
 		]
 	},
 	"mixins": [
-		"sayas.mixins.json",
+		"sayas-mod.mixins.json",
 		{
-			"config": "sayas.client.mixins.json",
+			"config": "sayas-mod.client.mixins.json",
 			"environment": "client"
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.18.1",
-		"minecraft": "~1.21.10",
-		"java": ">=21",
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~26.1",
+		"java": ">=25",
 		"fabric-api": "*"
+	},
+	"custom": {
+		"quilt_loader": {
+			"load_types": ["fabric"]
+		}
 	}
 }
-
